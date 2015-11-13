@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 	
 	RewriteEngine ON
-	RewriteRule ^([\.]*)/?$ lib/Util.php [NC,L]
+	RewriteRule ^([\.]*)/?$ ./Router.php [NC,L]
 	
 </IfModule>

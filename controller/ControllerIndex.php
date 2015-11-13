@@ -1,6 +1,6 @@
 <?php
 
-require_once '..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
+require_once '.'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
 
 class ControllerIndex {
 	
@@ -8,9 +8,9 @@ class ControllerIndex {
 	
 	public function load() {
 		
-		require_once '../model/ModelAluno.php';
-		require_once '../model/ModelDisciplina.php';
-		require_once '../model/TopicData.php';
+		require_once './model/ModelAluno.php';
+		require_once './model/ModelDisciplina.php';
+		require_once './model/TopicData.php';
 		
 		$disciplina = new ModelDisciplina();
 		$aluno = new ModelAluno();
@@ -49,7 +49,7 @@ class ControllerIndex {
 											</tr>";
 		}
 		
-		require_once "../index.php";
+		//require_once "../index.php";
 	}
 	
 	public function addDados($post) {

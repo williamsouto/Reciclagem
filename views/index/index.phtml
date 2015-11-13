@@ -1,0 +1,212 @@
+<section>
+	<div class="bg-body">
+		<div class="container-fluid">
+			<div id="msgSuccess">
+				<div class="alert alert-success alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<span class="content-msg"></span>
+				</div>
+			</div>
+
+			<!-- Banners -->
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<div class="panel banner-green" id="banner">
+						<div class="banner-content" onmouseover="inAnimacao(this)"
+							onmouseout="outAnimacao(this)">
+							<i class="fa fa-thumbs-o-up fa-5x"></i> <span>Aprovados</span>
+							<p>180</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="panel banner-blue" id="banner">
+						<div class="banner-content" onmouseover="inAnimacao(this)"
+							onmouseout="outAnimacao(this)">
+							<i class="fa fa-hourglass-start fa-5x"></i> <span>Pendentes</span>
+							<p>23</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="panel banner-red" id="banner">
+						<div class="banner-content" onmouseover="inAnimacao(this)"
+							onmouseout="outAnimacao(this)">
+							<i class="fa fa-thumbs-o-down fa-5x"></i> <span>Reprovados</span>
+							<p>360</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="panel banner-yellow" id="banner">
+						<div class="banner-content" onmouseover="inAnimacao(this)"
+							onmouseout="outAnimacao(this)">
+							<i class="fa fa-sticky-note fa-5x"></i> <span>Em análise</span>
+							<p>21</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Fim Banners -->
+
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-user-plus"></i> Cadastro de aluno
+						</div>
+						<div class="panel-body">
+							<form method="get">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label>Nome</label> <input type="text" class="form-control"
+												placeholder="Informe o nome..." id="txtNomeAluno">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label>Endereco</label> <input type="text"
+												class="form-control" placeholder="Informe o endereco..."
+												id="txtEndereco">
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary"
+									id="btnSalvarAluno" value="">Salvar</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-book"></i> Cadastro de Disciplina
+						</div>
+						<div class="panel-body">
+							<form method="get">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label>Nome da disciplina</label> <input type="text"
+												class="form-control"
+												placeholder="Informe o nome da disciplina...">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label>Sigla</label> <input type="text" class="form-control"
+												placeholder="Informe a sigla ...">
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary"
+									id="btnSalvarDisciplina" value="">Salvar</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="panel panel-inverse">
+						<div class="panel-heading">Formulario</div>
+						<div class="panel-body">
+							<div class="col-lg-12">
+								<form method="POST" id="cadastroAluno">
+									<input type="hidden" name="codMatricula" id="hdCodMatricula"
+										value=""> <input type="hidden" name="operacao" id="hdOp"
+										value="Novo">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="form-group">
+												<label for="drpAluno">Aluno</label><select id="drpAluno"
+													class="form-control" required>
+															<?php echo $this->data['Alunos'];?>
+														</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-8">
+											<div class="form-group">
+												<label for="drpDisciplina">Disciplina</label> <select
+													id="drpDisciplina" class="form-control" required>
+															<?php echo $this->data['Disciplinas'];?>
+														</select>
+											</div>
+										</div>
+										<div class="col-xs-4">
+											<div class="form-group">
+												<label for="txtNota">Nota</label> <input type="text"
+													class="form-control" id="txtNota"
+													placeholder="Digite a nota...">
+											</div>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-success" id="btnSalvar"
+										value="">Salvar</button>
+									<button type='reset' class="btn btn-default" id="btnLimpar">Limpar
+										Campos</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="panel widget">
+						<div class="list-group-item head-widget">
+							<span>Situacoes de Alunos</span>
+						</div>
+						<div class="list-group">
+							<button type="button" class="list-group-item">Cras justo odio</button>
+							<button type="button" class="list-group-item">Dapibus ac
+								facilisis in</button>
+							<button type="button" class="list-group-item">Morbi leo risus</button>
+							<button type="button" class="list-group-item">Porta ac
+								consectetur ac</button>
+							<button type="button" class="list-group-item">Vestibulum at eros</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-inverse">
+				<div class="panel-heading">
+					Alunos Cadastrados <a href="#collapseExample"
+						data-toggle="collapse" aria-expanded="false"
+						aria-controls="collapseExample"><i
+						class="fa fa-angle-double-up pull-right"></i></a>
+				</div>
+				<div class="panel-body" class="collapse" id="collapseExample">
+					<div class="row">
+						<div class="col-lg-12">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Aluno</th>
+										<th>Disciplina</th>
+										<th>Nota</th>
+										<th>Ações</th>
+									</tr>
+								</thead>
+								<tbody id='matriculas'>
+										<?php echo $this->data['Matriculas']; ?>
+									</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
